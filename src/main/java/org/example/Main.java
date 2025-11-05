@@ -2,15 +2,17 @@ package org.example;
 import books.Book;
 import books.Writer;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws JsonProcessingException {
+    public static void main(String[] args) throws IOException {
         Writer writer1 = new Writer("Миллер", "Генри", null, "26.12.1891", "США", "Английский");
         Writer writer2 = new Writer("Достоевский", "Фёдор", "Михайлович", "30.10.1821", "Россия", "Русский");
         Writer writer3 = new Writer("Айтматов", "Чингиз", "Торекулович", "12.12.1928", "Кыргызстан", "Русский");
@@ -45,19 +47,16 @@ public class Main {
         bookList.add(book9);
         bookList.add(book10);
 
-        List rusultBookList = bookList.stream()
-                .filter(book -> book.getLanguage().equals("Русский"))
-                .collect(Collectors.toList());
+//        jsonSerialize(bookList);
+
+        jsonDeserialize();
+
 
 //        for (int i = 0; i<bookList.size(); i++){
 //            if(!bookList.get(i).getLanguage().equals("Русский")){
 //               bookList.remove(i);
 //            }
 //        }
-
-        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
-        String jsonBookList = mapper.writeValueAsString(rusultBookList);
-        System.out.println(jsonBookList);
 
 //        for (Book element: bookList){
 //            if(!element.getLanguage().equals("Русский")){
@@ -66,5 +65,38 @@ public class Main {
 //        }
 //        System.out.println(bookList);
     }
+    public static void jsonDeserialize() throws IOException {
+
+//        StringBuilder result = new StringBuilder();
+//
+//        try (BufferedReader br = new BufferedReader(new FileReader("D:/Backend/startJavaProject/src/main/resources/jsonFile.txt"))) {
+//            String line;
+//
+//            while((line = br.readLine()) != null) {
+//                result.append(line);
+//                result.append('\n');
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        String jsonString = result.toString();
+       // System.out.println(jsonString);
+
+        File file = new File("D:/Backend/startJavaProject/src/main/resources/jsonFile.txt");
+
+        List<Book> booksFromJsonList = new ObjectMapper().readValue(file, new TypeReference<>(){});
+        System.out.println(booksFromJsonList);
+    }
+
+        public static void jsonSerialize(ArrayList<Book> bookList) throws JsonProcessingException {
+            List rusultBookList = bookList.stream()
+                    .filter(book -> book.getLanguage().equals("Русский"))
+                    .collect(Collectors.toList());
+
+            ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+            String jsonBookList = mapper.writeValueAsString(rusultBookList);
+            System.out.println(jsonBookList);
+       }
+
 }
 
