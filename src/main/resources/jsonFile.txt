@@ -1,0 +1,73 @@
+[ {
+  "name" : "Братья Карамазовы",
+  "genre" : "Роман",
+  "language" : "Русский",
+  "creationYear" : "1878",
+  "editionName" : "МосКнига",
+  "editionLocation" : "Россия, Москва",
+  "editionYear" : "1880",
+  "pageAmount" : 500,
+  "writer" : {
+    "surname" : "Достоевский",
+    "firstName" : "Фёдор",
+    "patronymic" : "Михайлович",
+    "birthdate" : "30.10.1821",
+    "birthCountry" : "Россия",
+    "language" : "Русский"
+  },
+  "isbn" : "125-478-5456"
+}, {
+  "name" : "Белый пароход",
+  "genre" : "Повесть",
+  "language" : "Русский",
+  "creationYear" : "1970",
+  "editionName" : "МосИздат",
+  "editionLocation" : "Россия, Москва",
+  "editionYear" : "1990",
+  "pageAmount" : 250,
+  "writer" : {
+    "surname" : "Айтматов",
+    "firstName" : "Чингиз",
+    "patronymic" : "Торекулович",
+    "birthdate" : "12.12.1928",
+    "birthCountry" : "Кыргызстан",
+    "language" : "Русский"
+  },
+  "isbn" : "127-858-988"
+}, {
+  "name" : "Плаха",
+  "genre" : "Роман",
+  "language" : "Русский",
+  "creationYear" : "1987",
+  "editionName" : "РОСМЭН",
+  "editionLocation" : "Россия, Москва",
+  "editionYear" : "2005",
+  "pageAmount" : 600,
+  "writer" : {
+    "surname" : "Айтматов",
+    "firstName" : "Чингиз",
+    "patronymic" : "Торекулович",
+    "birthdate" : "12.12.1928",
+    "birthCountry" : "Кыргызстан",
+    "language" : "Русский"
+  },
+  "isbn" : "333-858-988"
+}, {
+  "name" : "Бабушка велела кланяться и просить прощения",
+  "genre" : "Роман",
+  "language" : "Русский",
+  "creationYear" : "2013",
+  "editionName" : "Синдбад",
+  "editionLocation" : "Россия, Москва",
+  "editionYear" : "2018",
+  "pageAmount" : 400,
+  "writer" : {
+    "surname" : "Бакман",
+    "firstName" : "Фредерик",
+    "patronymic" : null,
+    "birthdate" : "02.06.1981",
+    "birthCountry" : "Швеция",
+    "language" : "Шведский"
+  },
+  "isbn" : "455-589-5454"
+} ]
